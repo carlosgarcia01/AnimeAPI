@@ -10,8 +10,20 @@ const typeDefs = `
     }
 
     type Mutation {
+ 
         createAnime(input:InputAnime):Anime
+
+        updateAnime(_id:String,input:InputAnime):String
+
+
+        deleteAnime(_id:String):String
+
+
         createCategory(input:String):Category
+
+        updateCategory(_id:String, input:String):String
+
+        deleteCategory(_id:String):String
     }
 
     input InputAnime {
@@ -20,12 +32,12 @@ const typeDefs = `
         categories:[String]
         chapters:Int!
     }
-    
+
     type Anime {
         _id: ID
         name:String!
         image:String
-        categories:[Category]
+        categories:[String]
         chapters:Int!
     }
 
